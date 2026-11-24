@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jappware 2.0 — engineering, rebuilt around AI</title>
+<meta name="description" content="They quoted six months. We shipped in five days. Jappware 2.0: a senior engineer and ten specialist AI agents, a gated test-first chain from idea to production. Results, not hours.">
+<meta property="og:title" content="Jappware 2.0 — engineering, rebuilt around AI">
+<meta property="og:description" content="They quoted six months. We shipped in five days.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='13' fill='none' stroke='%23F9CF0B' stroke-width='2.5'/%3E%3Ccircle cx='15' cy='15' r='4' fill='%23F9CF0B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0C0B}
+a{color:#F9CF0B}a:hover{color:#FFE066}
+.jw *{box-sizing:border-box}
+.jw .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.jw .h{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:-0.035em;margin:0}
+.jw .mono{font-family:'JetBrains Mono',ui-monospace,monospace;letter-spacing:0.14em;text-transform:uppercase}
+.jw .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none}
+.jw .btn-y{background:#F9CF0B;color:#0A0C0B}.jw .btn-y:hover{background:#FFE066;color:#0A0C0B}
+.jw .btn-o{border:1px solid #3A423D;color:#F2F3EE}.jw .btn-o:hover{border-color:#F9CF0B;color:#F9CF0B}
+.jw .navlink{color:#C6CCC6;text-decoration:none;font-size:15px}.jw .navlink:hover{color:#F9CF0B}
+.jw .tab{font:600 15px Inter,system-ui,sans-serif;min-height:48px;padding:0 22px;border-radius:999px;cursor:pointer;border:1px solid #3A423D;background:transparent;color:#C6CCC6}
+.jw .tab.on{background:#F2F3EE;color:#0A0C0B;border-color:#F2F3EE}
+@media (max-width:760px){.jw .span2{grid-column:auto !important}.jw .wrap{padding:0 20px}.jw .hide-sm{display:none}.jw .hero-h{font-size:52px !important}.jw .big-h{font-size:40px !important}.jw .num{font-size:56px !important}}
+</style>
+<style>html{scroll-behavior:smooth} [hidden]{display:none !important}</style>
+</head>
+<body>
+<div class="jw" style="background: #0A0C0B; color: #F2F3EE; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.55">
+
+<header style="position: relative; z-index: 2; border-bottom: 1px solid #1C221F">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; min-height: 76px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F2F3EE">
+<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#F9CF0B" stroke-width="2"></circle><circle cx="15" cy="15" r="7.5" fill="none" stroke="#F9CF0B" stroke-width="2" opacity="0.6"></circle><circle cx="15" cy="15" r="3" fill="#F9CF0B"></circle></svg>
+<span class="h" style="font-size: 21px; font-weight: 700; letter-spacing: -0.02em">JAPPWARE <span style="color: #F9CF0B">2.0</span></span>
+</a>
+<nav aria-label="Main" class="hide-sm" style="display: flex; gap: 30px; flex-wrap: wrap">
+<a class="navlink" href="#lens">The first lens</a>
+<a class="navlink" href="#how">How we work</a>
+<a class="navlink" href="#cases">Cases</a>
+<a class="navlink" href="#pricing">Results, not hours</a>
+<a class="navlink" href="#manifesto">Manifesto</a>
+</nav>
+<a class="btn btn-y" href="#contact" style="min-height: 44px; font-size: 15px">Book a scoping call</a>
+</div>
+</header>
+
+<section id="top" style="position: relative; overflow: hidden; padding: 96px 0 110px">
+<div aria-hidden="true" style="position: absolute; right: -260px; top: -120px; width: 900px; height: 900px; border-radius: 50%; border: 1px solid rgba(249,207,11,0.16)"></div>
+<div aria-hidden="true" style="position: absolute; right: -110px; top: 30px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(249,207,11,0.26)"></div>
+<div aria-hidden="true" style="position: absolute; right: 20px; top: 160px; width: 340px; height: 340px; border-radius: 50%; border: 2px solid rgba(249,207,11,0.5); background: radial-gradient(circle, rgba(249,207,11,0.16), rgba(249,207,11,0) 70%)"></div>
+<div aria-hidden="true" style="position: absolute; right: 150px; top: 290px; width: 80px; height: 80px; border-radius: 50%; background: #F9CF0B; box-shadow: 0 0 80px rgba(249,207,11,0.55)"></div>
+<div class="wrap" style="position: relative">
+<p class="mono" style="margin: 0 0 28px; font-size: 13px; color: #F9CF0B">Jappware 2.0 · engineering, rebuilt around AI</p>
+<h1 class="h hero-h" style="font-size: 104px; line-height: 0.95; font-weight: 700; max-width: 980px">They quoted <span style="color: #6E7771; text-decoration: line-through; text-decoration-color: #FF5A4E; text-decoration-thickness: 6px">six months.</span><br>We shipped in <span style="color: #F9CF0B">five days.</span></h1>
+<p style="margin: 36px 0 0; max-width: 640px; font-size: 21px; color: #C6CCC6">We are an engineering company that put AI in front of everything else — as the first lens, not the cherry on top. A senior engineer and ten specialist agents run a gated, test-first chain from idea to production. You pay for the result, not the hours.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px">
+<a class="btn btn-y" href="#contact">Book a 30-minute scoping call</a>
+<a class="btn btn-o" href="#cases">See the CopyTrader case</a>
+</div>
+</div>
+</section>
+
+<section aria-label="Jappware in numbers" style="border-top: 1px solid #1C221F; border-bottom: 1px solid #1C221F">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 0">
+<div style="padding: 34px 24px 34px 0"><p class="h" style="font-size: 52px; font-weight: 700; color: #F9CF0B; line-height: 1">70+</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 15px">products delivered for clients</p></div>
+<div style="padding: 34px 24px 34px 0"><p class="h" style="font-size: 52px; font-weight: 700; color: #F9CF0B; line-height: 1">50+</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 15px">in-house engineers in Lviv</p></div>
+<div style="padding: 34px 24px 34px 0"><p class="h" style="font-size: 52px; font-weight: 700; color: #F9CF0B; line-height: 1">23</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 15px">delivery skills codified from real projects</p></div>
+<div style="padding: 34px 24px 34px 0"><p class="h" style="font-size: 52px; font-weight: 700; color: #F9CF0B; line-height: 1">10</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 15px">specialist AI agents on every build</p></div>
+</div>
+</section>
+
+<section id="lens" style="padding: 130px 0 40px">
+<div class="wrap">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">The first lens</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700; max-width: 980px">AI isn't the cherry on top. It's the lens we look through.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 24px; margin-top: 56px">
+
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 28px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #A7AFA9">How the IT industry works</p>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 10px 0">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 6px">
+<span class="mono" style="font-size: 12px; color: #F2F3EE">AI</span>
+<svg width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path d="M22 2 C20 10 15 14 13 19" fill="none" stroke="#7FB069" stroke-width="2"></path><path d="M22 2 C24 10 29 14 31 19" fill="none" stroke="#7FB069" stroke-width="2"></path><circle cx="13" cy="24" r="8" fill="#E0453A"></circle><circle cx="31" cy="24" r="8" fill="#C8352B"></circle></svg>
+</div>
+<div style="width: 42%; min-height: 50px; border-radius: 999px; background: #232A26; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #C6CCC6">Industry</div>
+<div style="width: 58%; min-height: 50px; border-radius: 999px; background: #232A26; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #C6CCC6">Experience</div>
+<div style="width: 74%; min-height: 50px; border-radius: 999px; background: #232A26; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #C6CCC6">Technologies</div>
+<div style="width: 90%; min-height: 50px; border-radius: 999px; background: #232A26; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #C6CCC6">People</div>
+</div>
+<p style="margin: 0; color: #A7AFA9; font-size: 16px">The classic pyramid: people, technologies, experience, industry — and AI as a nice extra on top. Things are a bit faster with it, but nothing really changes.</p>
+</div>
+
+<div style="background: #111513; border: 1px solid #F9CF0B; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 28px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #F9CF0B">How Jappware 2.0 works</p>
+<div role="img" aria-label="Concentric lenses: AI, then industry, experience, technologies and people, all focused on the client's business" style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 1; margin: 0 auto">
+<div style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #F9CF0B; background: rgba(249,207,11,0.05)"></div>
+<div style="position: absolute; inset: 9%; border-radius: 50%; border: 1px solid #4A5450"></div>
+<div style="position: absolute; inset: 18%; border-radius: 50%; border: 1px solid #4A5450"></div>
+<div style="position: absolute; inset: 27%; border-radius: 50%; border: 1px solid #4A5450"></div>
+<div style="position: absolute; inset: 36%; border-radius: 50%; border: 1px solid #4A5450"></div>
+<div style="position: absolute; inset: 43%; border-radius: 50%; background: radial-gradient(circle at 38% 35%, #FFF6C8, #F9CF0B 55%, #B88F00); box-shadow: 0 0 40px rgba(249,207,11,0.55)"></div>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 3%; text-align: center; font-size: 13px; font-weight: 600; color: #F9CF0B">AI</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 12%; text-align: center; font-size: 11px; color: #E3E6E0">Industry</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 21%; text-align: center; font-size: 11px; color: #E3E6E0">Experience</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 30%; text-align: center; font-size: 10px; color: #E3E6E0">Technologies</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 38.5%; text-align: center; font-size: 10px; color: #E3E6E0">People</span>
+</div>
+<p style="margin: 0; color: #C6CCC6; font-size: 16px">We turn the pyramid into a telescope. AI is the first lens we look through. It holds everything else: industry, experience, technologies, people. All of it is focused on one point, <strong style="color: #F2F3EE">your business</strong>.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3632; font-size: 14px; color: #E3E6E0">Problems</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3632; font-size: 14px; color: #E3E6E0">Needs</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3632; font-size: 14px; color: #E3E6E0">Pains</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3632; font-size: 14px; color: #E3E6E0">Tasks</span>
+</div>
+</div>
+
+</div>
+<p class="h" style="margin-top: 48px; font-size: 28px; font-weight: 600; color: #C6CCC6; max-width: 900px">From the first call, we see your problem differently, because we think in terms of <span style="color: #F9CF0B">what is now possible</span>.</p>
+</div>
+</section>
+
+<section style="padding: 130px 0 120px">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 64px; align-items: center">
+<div>
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">The gap</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700">The market still estimates in months. The real work now takes days.</h2>
+<p style="margin: 28px 0 0; color: #C6CCC6; font-size: 19px; max-width: 560px">Between how the industry prices software and what it actually takes has opened a 20–30× gap. That gap is our advantage for exactly as long as we use it better than anyone else. In a year, everyone will have the tools. Only a few will have the system.</p>
+</div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 28px; padding: 40px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #A7AFA9">CopyTrader — from zero to a working build</p>
+<div style="margin-top: 30px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="color: #C6CCC6">Client's own team estimate</span><span class="h" style="font-size: 30px; font-weight: 700; color: #F2F3EE">6 months</span></div>
+<div style="height: 18px; border-radius: 9px; background: #FF5A4E; margin-top: 12px; width: 100%"></div>
+</div>
+<div style="margin-top: 34px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="color: #C6CCC6">Jappware 2.0</span><span class="h" style="font-size: 30px; font-weight: 700; color: #F9CF0B">5 days</span></div>
+<div style="height: 18px; border-radius: 9px; background: #F9CF0B; margin-top: 12px; width: 4%; min-width: 18px"></div>
+</div>
+<p style="margin: 34px 0 0; padding-top: 24px; border-top: 1px solid #222A26; color: #A7AFA9; font-size: 15px">Not a faster typist. A different process: every step adds context and a point of verification.</p>
+</div>
+</div>
+</section>
+
+<section id="how" style="padding: 120px 0; background: #F2F3EE; color: #0A0C0B">
+<div class="wrap">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #6B5A00">How we work</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700; max-width: 900px">Most teams use AI as a one-shot. We built a chain.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px; margin-top: 56px">
+<div style="border: 1px solid #D5D8CF; border-radius: 24px; padding: 34px; background: #E8EAE2">
+<p class="mono" style="margin: 0; font-size: 12px; color: #A3261C">One-shot AI</p>
+<p class="h" style="margin-top: 22px; font-size: 34px; font-weight: 700; color: #5E655F">Idea ──────► Code</p>
+<p style="margin: 6px 0 0; font-style: italic; color: #A3261C; font-size: 18px">…and pray.</p>
+<p style="margin: 24px 0 0; color: #3D433F">Fast-looking, expensive in reality: a missing piece of context surfaces only in the code, where it costs the most to fix — and every new task starts from a blank page.</p>
+</div>
+<div style="border: 2px solid #0A0C0B; border-radius: 24px; padding: 34px; background: #FFFFFF">
+<p class="mono" style="margin: 0; font-size: 12px; color: #0A0C0B">The Jappware 2.0 chain</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px">
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F9CF0B; font-weight: 600; font-size: 14px">Idea</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Research</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Requirements</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Architecture</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Design</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Code</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F2F3EE; font-weight: 600; font-size: 14px">Tests</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0A0C0B; color: #F9CF0B; font-weight: 600; font-size: 14px">Deploy</span>
+</div>
+<p style="margin: 24px 0 0; color: #3D433F">Every link = <strong>context + verification + iteration</strong>. The question shifts from "how do I write this code" to "what are we building, and in what order".</p>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px; margin-top: 72px">
+<div style="padding-top: 22px; border-top: 2px solid #0A0C0B"><p class="mono" style="margin: 0; font-size: 12px; color: #5E655F">01 · Idea</p><p class="h" style="margin-top: 10px; font-size: 24px; font-weight: 700">Three strategies, not one guess</p><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">Researcher and Strategist map the market and lay out genuinely different paths with their trade-offs.</p></div>
+<div style="padding-top: 22px; border-top: 2px solid #0A0C0B"><p class="mono" style="margin: 0; font-size: 12px; color: #5E655F">02 · Specify</p><p class="h" style="margin-top: 10px; font-size: 24px; font-weight: 700">A spec two engineers read the same way</p><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">The Devil's Advocate hunts every vague word and failure mode before a line of code exists.</p></div>
+<div style="padding-top: 22px; border-top: 2px solid #0A0C0B"><p class="mono" style="margin: 0; font-size: 12px; color: #5E655F">03 · Build</p><p class="h" style="margin-top: 10px; font-size: 24px; font-weight: 700">Red, green, refactor</p><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">The test is written first. Then the code that makes it pass. Deterministic checks, not "trust me, it works".</p></div>
+<div style="padding-top: 22px; border-top: 2px solid #0A0C0B"><p class="mono" style="margin: 0; font-size: 12px; color: #5E655F">04 · Deliver</p><p class="h" style="margin-top: 10px; font-size: 24px; font-weight: 700">Independent review, then ship</p><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">Whoever wrote the code never approves it. Every acceptance criterion verified before release.</p></div>
+</div>
+</div>
+</section>
+
+<section style="padding: 130px 0">
+<div class="wrap">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap">
+<div style="max-width: 760px">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">The crew</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700">Agents do 80% of the work. A senior engineer owns 100% of the result.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #A7AFA9">Every build is led by an experienced Jappware engineer — architect and quality gate, not a typist. The agents bring speed; the engineer brings judgement and domain experience.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 14px; margin-top: 56px">
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #4FD1FF">Think</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Researcher</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Starts every spec from what already works in the market.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #F9CF0B">Think</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Strategist</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Three different strategies: simplicity, differentiation, balance.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #A78BFA">Think</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Analyst</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Tests every option through engineer, executive and UX lenses.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #FF7A70">Challenge</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Devil's Advocate</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Hunts ambiguity and failure modes in every requirement.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #FF9F43">Challenge</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Critic</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Catches drift, gaps and contradictions across spec and design.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #2DD4BF">Map</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Explorer</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Learns your existing codebase so new work fits right in.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #F472B6">Map</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Pen-Keeper</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Guards the design system: one source of truth for UI.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #4ADE80">Build</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Test-Author</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Writes the failing test before any implementation.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #4ADE80">Build</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Implementer</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Makes it pass, task by task, under a day each.</p></div>
+<div style="background: #111513; border: 1px solid #222A26; border-radius: 20px; padding: 24px"><p class="mono" style="margin: 0; font-size: 11px; color: #E5E7E3">Verify</p><p class="h" style="margin-top: 10px; font-size: 21px; font-weight: 700">Reviewer</p><p style="margin: 8px 0 0; font-size: 15px; color: #A7AFA9">Independent verdict against the spec before anything ships.</p></div>
+<div class="span2" style="background: #F9CF0B; color: #0A0C0B; border-radius: 20px; padding: 24px; grid-column: auto / span 2; min-width: 0"><p class="mono" style="margin: 0; font-size: 11px; color: #3D3300">Owns the result</p><p class="h" style="margin-top: 10px; font-size: 26px; font-weight: 700">Senior Jappware engineer</p><p style="margin: 8px 0 0; font-size: 15px; color: #2A2500">Designs the boundaries, asks the right questions, reviews without mercy and signs off every stage.</p></div>
+</div>
+</div>
+</section>
+
+<section id="cases" style="padding: 120px 0; border-top: 1px solid #1C221F">
+<div class="wrap">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">Proof, not promises</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700; max-width: 880px">Same scope. A fraction of the time and budget.</h2>
+<div role="tablist" aria-label="Case studies" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 40px">
+<button role="tab" id="tab-a" aria-selected="true" aria-controls="panel-a" class="tab on">CopyTrader · fintech</button>
+<button role="tab" id="tab-b" aria-selected="false" aria-controls="panel-b" class="tab">Night Shore · 3D browser game</button>
+</div>
+<div id="panel-a" role="tabpanel" aria-labelledby="tab-a" style="margin-top: 28px; background: #111513; border: 1px solid #222A26; border-radius: 28px; padding: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px">
+<div>
+<p class="mono" style="margin: 0; font-size: 12px; color: #A7AFA9">Fintech · B2B2C copy trading</p>
+<h3 class="h" style="margin-top: 14px; font-size: 44px; font-weight: 700; line-height: 1.05">CopyTrader</h3>
+<p style="margin: 18px 0 0; color: #C6CCC6; font-size: 18px">A trader places one trade — it fans out to every follower’s broker account, sized to their balance, exactly once. Built for private trading communities that keep their own brand.</p>
+<ul style="margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Queue-based fan-out: Redis + ARQ workers that scale out</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Exactly-once routing with a Redis lock</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Per-follower sizing and isolated failures</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Live dashboard over WebSocket, full audit trail</span></li>
+</ul>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start">
+<div style="border: 1px solid #2E3632; border-radius: 20px; padding: 22px"><p class="mono" style="margin: 0; font-size: 11px; color: #FF8A80">Classic process</p><p class="h" style="margin-top: 12px; font-size: 34px; font-weight: 700; color: #8E968F">~6 months</p><p style="margin: 2px 0 0; color: #A7AFA9; font-size: 14px">team of 4 · client’s own estimate</p><p class="h" style="margin-top: 16px; font-size: 26px; font-weight: 700; color: #8E968F">~$170,000</p></div>
+<div style="border: 1px solid #F9CF0B; border-radius: 20px; padding: 22px; background: rgba(249,207,11,0.06)"><p class="mono" style="margin: 0; font-size: 11px; color: #F9CF0B">Jappware 2.0</p><p class="h" style="margin-top: 12px; font-size: 34px; font-weight: 700; color: #F9CF0B">5 days</p><p style="margin: 2px 0 0; color: #C6CCC6; font-size: 14px">1 senior engineer + 10 agents</p><p class="h" style="margin-top: 16px; font-size: 26px; font-weight: 700; color: #F2F3EE">~$10,000</p></div>
+<div style="grid-column: span 2; border-radius: 20px; padding: 22px; background: #F9CF0B; color: #0A0C0B; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap"><span class="h" style="font-size: 30px; font-weight: 700">~17× cheaper · ~25× faster</span><span style="font-size: 14px; font-weight: 600">To a working, spec-verified build</span></div>
+</div>
+</div>
+<div id="panel-b" role="tabpanel" aria-labelledby="tab-b" hidden style="margin-top: 28px; background: #111513; border: 1px solid #222A26; border-radius: 28px; padding: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px">
+<div>
+<p class="mono" style="margin: 0; font-size: 12px; color: #A7AFA9">Entertainment · WebGL</p>
+<h3 class="h" style="margin-top: 14px; font-size: 44px; font-weight: 700; line-height: 1.05">Night Shore</h3>
+<p style="margin: 18px 0 0; color: #C6CCC6; font-size: 18px">An open-world 3D city game that runs in any browser — no install, one link. Traffic, police, missions and our own Jappware office inside the city.</p>
+<ul style="margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Living city with traffic, people and day/night cycle</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Cars, a tank and a helicopter</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Five-star police system and a 5-chapter story</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #E3E6E0; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#F9CF0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Static hosting: playable from a single link</span></li>
+</ul>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start">
+<div style="border: 1px solid #2E3632; border-radius: 20px; padding: 22px"><p class="mono" style="margin: 0; font-size: 11px; color: #FF8A80">Classic process</p><p class="h" style="margin-top: 12px; font-size: 34px; font-weight: 700; color: #8E968F">~5 months</p><p style="margin: 2px 0 0; color: #A7AFA9; font-size: 14px">team of 5 · typical estimate</p><p class="h" style="margin-top: 16px; font-size: 26px; font-weight: 700; color: #8E968F">~$150,000</p></div>
+<div style="border: 1px solid #F9CF0B; border-radius: 20px; padding: 22px; background: rgba(249,207,11,0.06)"><p class="mono" style="margin: 0; font-size: 11px; color: #F9CF0B">Jappware 2.0</p><p class="h" style="margin-top: 12px; font-size: 34px; font-weight: 700; color: #F9CF0B">~2 weeks</p><p style="margin: 2px 0 0; color: #C6CCC6; font-size: 14px">1 senior engineer + 10 agents</p><p class="h" style="margin-top: 16px; font-size: 26px; font-weight: 700; color: #F2F3EE">~$15,000</p></div>
+<div style="grid-column: span 2; border-radius: 20px; padding: 22px; background: #F9CF0B; color: #0A0C0B; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap"><span class="h" style="font-size: 30px; font-weight: 700">~10× cheaper · ~10× faster</span><span style="font-size: 14px; font-weight: 600">Jappware estimate for this scope</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing" style="padding: 130px 0; background: #F9CF0B; color: #0A0C0B">
+<div class="wrap">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #3D3300">Principle #1</p>
+<h2 class="h hero-h" style="font-size: 120px; line-height: 0.92; font-weight: 700">We sell results.<br><span style="color: rgba(10,12,11,0.45)">Not hours.</span></h2>
+<p style="margin: 34px 0 0; max-width: 700px; font-size: 20px; color: #2A2500">Billing for time when AI cut the time twentyfold would be shooting ourselves in the foot. You buy a delivered product, a faster path to market and runway you didn't burn.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 18px; margin-top: 60px">
+<div style="background: #0A0C0B; color: #F2F3EE; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #F9CF0B">Prove it</p>
+<p class="h" style="font-size: 30px; font-weight: 700">5-Day Proof</p>
+<p style="margin: 0; color: #C6CCC6; font-size: 16px">A working build of your riskiest idea in five days — so you test the hypothesis while the budget is still intact.</p>
+<p class="h" style="margin-top: auto; padding-top: 14px; font-size: 26px; font-weight: 700; color: #F9CF0B">[FIXED PRICE]</p>
+</div>
+<div style="background: #0A0C0B; color: #F2F3EE; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #F9CF0B">Ship it</p>
+<p class="h" style="font-size: 30px; font-weight: 700">Product Launch</p>
+<p style="margin: 0; color: #C6CCC6; font-size: 16px">From idea to production through all six gates: spec, architecture, tests, review, deploy. Priced by outcome.</p>
+<p class="h" style="margin-top: auto; padding-top: 14px; font-size: 26px; font-weight: 700; color: #F9CF0B">[FROM PRICE]</p>
+</div>
+<div style="background: #0A0C0B; color: #F2F3EE; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #F9CF0B">Scale it</p>
+<p class="h" style="font-size: 30px; font-weight: 700">AI-Native Team</p>
+<p style="margin: 0; color: #C6CCC6; font-size: 16px">Senior engineers with the full agent crew on your roadmap — measured by releases and quality in production, not tickets closed.</p>
+<p class="h" style="margin-top: auto; padding-top: 14px; font-size: 26px; font-weight: 700; color: #F9CF0B">[MONTHLY PRICE]</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 130px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 64px; align-items: start">
+<div>
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">Speed = less risk</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700">Speed isn't the goal. It's how we cut your risk.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="border: 1px solid #2E3632; border-radius: 20px; padding: 26px; display: flex; gap: 18px; align-items: flex-start"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; border-radius: 50%; background: #FF5A4E; margin-top: 8px"></span><div><p class="h" style="font-size: 24px; font-weight: 700">Six months blind</p><p style="margin: 6px 0 0; color: #A7AFA9">The risk of building the wrong thing — discovered after the budget is gone.</p></div></div>
+<div style="border: 1px solid #F9CF0B; border-radius: 20px; padding: 26px; display: flex; gap: 18px; align-items: flex-start"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; border-radius: 50%; background: #F9CF0B; margin-top: 8px"></span><div><p class="h" style="font-size: 24px; font-weight: 700">Two weeks to a working version</p><p style="margin: 6px 0 0; color: #C6CCC6">Real users on the product while the budget is intact. "Fast" means a short loop to the truth — never skipping tests or review.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="manifesto" style="padding: 130px 0; border-top: 1px solid #1C221F">
+<div class="wrap">
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">The manifesto</p>
+<h2 class="h big-h" style="font-size: 60px; line-height: 1.02; font-weight: 700; max-width: 900px">Eight principles. We live all eight at once.</h2>
+<ol style="list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 40px 32px">
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">01</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Results, not hours</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">Time is our internal efficiency metric, never the price tag.</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">02</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">AI is the first lens</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">From the first client call we see the problem through what is now possible.</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">03</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Engineers are architects</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">The value is in the right questions, system boundaries and ruthless review.</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">04</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Domain is the multiplier</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">First question on any project: who here has already lived in this domain?</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">05</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Speed reduces risk</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">A short feedback loop instead of months of building blind.</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">06</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Review matters more</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">Whoever wrote the code never accepts it themselves.</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">07</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Tests are the loop</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">Write, run, see red, fix. Show the test output, not "it works".</p></li>
+<li><p class="h" style="font-size: 46px; font-weight: 700; color: #F9CF0B; line-height: 1">08</p><p class="h" style="margin-top: 14px; font-size: 22px; font-weight: 700">Honest about uncertainty</p><p style="margin: 8px 0 0; color: #A7AFA9; font-size: 16px">Better "I don't know yet" than a confident guess — from people and from AI.</p></li>
+</ol>
+</div>
+</section>
+
+<section style="padding: 130px 0; background: #111513; border-top: 1px solid #1C221F; border-bottom: 1px solid #1C221F">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 64px; align-items: center">
+<div>
+<p class="mono" style="margin: 0 0 22px; font-size: 13px; color: #F9CF0B">Organizational intelligence</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700">Anyone can copy the AI tools in a week. No one can copy our experience.</h2>
+</div>
+<div>
+<p style="margin: 0; color: #C6CCC6; font-size: 19px">Every project leaves something behind. A bug caught once becomes a rule the agents read on day one. A pattern that repeats becomes a skill. A project isn't closed until its experience is codified — so the company gets smarter with every delivery, and so does your next build.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px">
+<span class="mono" style="padding: 10px 16px; border: 1px solid #2E3632; border-radius: 999px; font-size: 12px; color: #E3E6E0">Skills</span>
+<span class="mono" style="padding: 10px 16px; border: 1px solid #2E3632; border-radius: 999px; font-size: 12px; color: #E3E6E0">Rules</span>
+<span class="mono" style="padding: 10px 16px; border: 1px solid #2E3632; border-radius: 999px; font-size: 12px; color: #E3E6E0">Agents</span>
+<span class="mono" style="padding: 10px 16px; border: 1px solid #F9CF0B; border-radius: 999px; font-size: 12px; color: #F9CF0B">Part of our Definition of Done</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 130px 0">
+<div class="wrap" style="max-width: 980px">
+<p class="mono" style="margin: 0 0 30px; font-size: 13px; color: #F9CF0B">Why Jappware 2.0</p>
+<blockquote style="margin: 0">
+<p class="h" style="font-size: 44px; line-height: 1.15; font-weight: 600">"We came out of the engineering community, where people try to make technology genuinely useful for business. AI is the key that lets the small outrun the big — and our engineers who taught AI their skills and rules showed us how."</p>
+<footer style="margin-top: 30px; display: flex; align-items: center; gap: 16px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 50%; background: #F9CF0B; display: inline-flex; align-items: center; justify-content: center; color: #0A0C0B; font-weight: 700; font-family: 'Space Grotesk', sans-serif">AR</span>
+<span><strong style="display: block">Andrii Rymar</strong><span style="color: #A7AFA9; font-size: 15px">Founder, Jappware</span></span>
+</footer>
+</blockquote>
+</div>
+</section>
+
+<section id="contact" style="padding: 130px 0 110px; position: relative; overflow: hidden; border-top: 1px solid #1C221F">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 60px; width: 760px; height: 760px; margin-left: -380px; border-radius: 50%; border: 1px solid rgba(249,207,11,0.18)"></div>
+<div class="wrap" style="position: relative; text-align: center">
+<h2 class="h hero-h" style="font-size: 92px; line-height: 0.98; font-weight: 700">Bring us the project<br>they quoted <span style="color: #F9CF0B">six months</span> for.</h2>
+<p style="margin: 30px auto 0; max-width: 600px; color: #C6CCC6; font-size: 20px">In 30 minutes we'll tell you what a working first version looks like, how long it really takes, and what it costs as a result — not as hours.</p>
+<div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 40px">
+<a class="btn btn-y" href="mailto:[CONTACT EMAIL]">Book a scoping call</a>
+<a class="btn btn-o" href="#cases">Watch the 2-minute film</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1C221F; padding: 40px 0">
+<div class="wrap" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: #8E968F; font-size: 14px">
+<span>© Jappware · Lviv, Ukraine · Engineering, rebuilt around AI</span>
+<span style="display: flex; gap: 22px; flex-wrap: wrap"><a href="#how" style="color: #A7AFA9">How we work</a><a href="#cases" style="color: #A7AFA9">Cases</a><a href="#manifesto" style="color: #A7AFA9">Manifesto</a><a href="#top" style="color: #A7AFA9">Privacy policy</a></span>
+</div>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('[role="tab"]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('[role="tab"]').forEach(function (o) {
+      var on = o === b; o.classList.toggle('on', on); o.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+    });
+  });
+});
+</script>
+</body>
+</html>
